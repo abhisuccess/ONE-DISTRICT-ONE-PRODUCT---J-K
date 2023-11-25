@@ -972,3 +972,64 @@ h2.porog{
                 grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
             }
         }
+/* Add this style for blinking and color-changing effect */
+@keyframes blinkColorChange {
+    0% {
+        color: #ff5733; /* Start color */
+    }
+    25% {
+        color: #f00; /* Red */
+    }
+    50% {
+        color: #ff5733; /* Back to start color */
+    }
+    75% {
+        color: #FFD700; /* Gold */
+    }
+    100% {
+        color: #0f0; /* Green */
+    }
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+#popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+#popup-banner {
+    background-color: #3498db;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+#close-popup {
+    background-color: #2c3e50;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#close-popup:hover {
+    background-color: #1a252f;
+}
+
+/* Apply blinking and color-changing effect to the important notice text */
+.blink-color-change {
+    animation: blinkColorChange 1s infinite;
+}
+

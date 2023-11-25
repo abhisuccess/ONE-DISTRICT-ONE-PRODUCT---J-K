@@ -41,6 +41,7 @@
         <img src="img/G20.png" alt="ODOP Logo">
         <img src="img/Seal_of_Jammu_and_Kashmir_color.png" alt="ODOP Logo">
     </div>
+
     <div class="alert-section">
         <div class="alert-container">
             <marquee> <p class="alert-message">Welcome to the official website of <span class="styled-word">One-District One-Product J&K</span> : Important Notification: Read our new government policy : REF/0023/2023/00978 <a href="#"> here</a>.</p></marquee>
@@ -341,6 +342,21 @@
           </form>
         </div>
       </section>
+
+    <!-- Popup Announcement Banner -->
+<div id="popup-container">
+    <div id="popup-banner">
+        <p><b>Greetings and welcome to our project!</b></p>
+        <br>
+        <p><span class="blink-color-change"><strong>Important Notice:</strong></span></p>
+        <br>
+        This website is not an official platform affiliated with One District, One Product Jammu & Kashmir. It is a personal project meticulously crafted by Abhi Success. All due credit is attributed to him, and the inclusion of government logos is solely for illustrative purposes. No unauthorized use of the logos is implied. We sincerely appreciate your understanding and support.</p>
+        <br>
+        <button id="close-popup">Close</button>
+    </div>
+</div>
+
+
     <script>
 
 
@@ -483,6 +499,19 @@ async function fetchAndDisplayRSS() {
     // Remove the "blinking" class from the Product link if it's present
     productLink.classList.remove("blinking");
   });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    // Show the popup banner
+    document.getElementById('popup-container').style.display = 'flex';
+
+    // Add event listener to the close button
+    document.getElementById('close-popup').addEventListener('click', function () {
+        // Hide the popup banner
+        document.getElementById('popup-container').style.display = 'none';
+    });
+});
+
+
 
         </script>
 </footer>

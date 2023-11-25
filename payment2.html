@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ODOP Payment Page</title>
+
+    <link rel="stylesheet" href="payment2.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="img/ONE DISTRICT ONE PRODUCT logo jandk.png" alt="Flipkart Logo">
+        </div>
+
+        <div class="content">
+            <h1>Payment Options</h1>
+
+            <div class="payment-methods">
+                <div class="payment-method">
+                    <img src="upi-icon.png" alt="UPI Icon">
+                    <div class="payment-method-details">
+                        <h2>UPI</h2>
+                        <p>Enter your UPI ID to proceed.</p>
+                        <input type="text" placeholder="Enter UPI ID">
+                        <button class="proceed-button">Proceed</button>
+                    </div>
+                </div>
+
+                <div class="payment-method">
+                    <img src="netbanking-icon.png" alt="Netbanking Icon">
+                    <div class="payment-method-details">
+                        <h2>Netbanking</h2>
+                        <p>Select your bank and proceed.</p>
+                        <select name="bank">
+                            <option value="">Select your bank</option>
+                            <option value="sbi">State Bank of India</option>
+                            <option value="hdfc">HDFC Bank</option>
+                            <option value="icici">ICICI Bank</option>
+                        </select>
+                        <button class="proceed-button">Proceed</button>
+                    </div>
+                </div>
+
+                <div class="payment-method">
+                    <img src="credit-card-icon.png" alt="Credit Card Icon">
+                    <div class="payment-method-details">
+                        <h2>Credit/Debit Card</h2>
+                        <p>Enter your card details to proceed.</p>
+                        <form action="#">
+                            <label for="cardNumber">Card Number:</label>
+                            <input type="text" id="cardNumber">
+
+                            <label for="cardName">Cardholder Name:</label>
+                            <input type="text" id="cardName">
+
+                            <label for="expDate">Expiry Date:</label>
+                            <input type="text" id="expDate">
+
+                            <label for="cvv">CVV:</label>
+                            <input type="text" id="cvv">
+
+                            <button class="proceed-button">Pay with Card</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="payment-method">
+                    <img src="paytm-icon.png" alt="Paytm Icon">
+                    <div class="payment-method-details">
+                        <h2>Paytm</h2>
+                        <p>Use your Paytm wallet to proceed.</p>
+                        <button class="proceed-button">Pay with Paytm</button>
+                    </div>
+                </div>  
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+    // Get all payment buttons
+    var paymentButtons = document.querySelectorAll('.proceed-button');
+
+    // Add click event listener to each button
+    paymentButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            // Get the payment method from the button's parent
+            var paymentMethod = this.closest('.payment-method').querySelector('h2').innerText;
+
+            // Show success message
+            showMessage('Payment done successfully for ' + paymentMethod);
+        });
+    });
+
+    function showMessage(message) {
+        // You can customize the display of the message (e.g., alert, modal, etc.)
+        alert(message);
+    }
+});
+
+        </script>
+</body>
